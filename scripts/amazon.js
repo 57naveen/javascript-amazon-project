@@ -6,7 +6,8 @@ import { formatCurrency } from './utils/money.js';
 let productsHTML = '';
 
 products.forEach((product)=>{
-    productsHTML = productsHTML +`
+    productsHTML = productsHTML +
+      `
             <div class="product-container">
             <div class="product-image-container">
             <img class="product-image"
@@ -64,7 +65,10 @@ products.forEach((product)=>{
 });
 
 
+//Generate the HTML using javascript and the using DOM to put this HTML inside the html file
+
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
 
 
 function updateCartQuantity()
@@ -82,6 +86,9 @@ function updateCartQuantity()
 
 }
 
+
+
+//Add to cart button
 document.querySelectorAll('.js-add-to-cart').forEach((button)=>
 {
   button.addEventListener('click',()=>
@@ -95,5 +102,10 @@ document.querySelectorAll('.js-add-to-cart').forEach((button)=>
             
   });
 });
+
+
+
+
+
 
 
