@@ -1,11 +1,10 @@
 import { cart,removeFromCart, updateDeliveryOption } from "../../data/cart.js";   
 import { products,getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-
 //ESM Version import for dayjs
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-
 import { deliveryOptions,getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 /*-------------How to use dayjs -------------------------*/
 
@@ -176,6 +175,9 @@ export function renderOrderSummary()
             
         const container=  document.querySelector(`.js-cart-item-container-${productId}`);
         container.remove();
+
+        //After delete prodcut in the checkout regenerate the HTML code by calling this function
+        renderPaymentSummary();
             })
         })    
 
@@ -193,6 +195,8 @@ export function renderOrderSummary()
             
             //After udpateDeliveryOption
             renderOrderSummary();
+            //After choose the delivery option regenerate the HTML code        
+            renderPaymentSummary();
             })
         })
 
