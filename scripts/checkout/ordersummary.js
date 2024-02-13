@@ -178,6 +178,7 @@ export function renderOrderSummary()
 
         //After delete prodcut in the checkout regenerate the HTML code by calling this function
         renderPaymentSummary();
+
             })
         })    
 
@@ -197,6 +198,7 @@ export function renderOrderSummary()
             renderOrderSummary();
             //After choose the delivery option regenerate the HTML code        
             renderPaymentSummary();
+            
             })
         })
 
